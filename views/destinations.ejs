@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %> | TravelWorld</title>
+  <link rel="stylesheet" href="/css/destinations.css" />
+</head>
+<body>
+
+  <%- include("partials/nav") %>
+
+  <!-- 🔍 SEARCH BAR -->
+  <section class="search-section">
+    <form action="/search" method="GET">
+      <input 
+        type="text" 
+        name="query" 
+        placeholder="Search country..." 
+        value="<%= searchQuery %>" 
+      >
+      <button type="submit">Search</button>
+    </form>
+  </section>
+
+  <!-- PAGE TITLE -->
+  <h1 class="title">
+    <% if (searchQuery && searchQuery.length > 0) { %>
+      Search Results for "<%= searchQuery %>"
+    <% } else { %>
+      Explore Destinations
+    <% } %>
+  </h1>
+
+  <!-- DESTINATION GRID -->
+  <section class="dest-grid">
+
+    <% if (destinations.length === 0) { %>
+      <p class="no-results">No destinations found.</p>
+    <% } %>
+
+    <% destinations.forEach(dest => { %>
+      <div class="dest-card">
+
+        <img src="<%= dest.images && dest.images.length > 0 ? dest.images[0] : '/img/no-image.jpg' %>" 
+             alt="<%= dest.name %>">
+
+        <h2><%= dest.name %></h2>
+
+        <p><%= dest.description ? dest.description.substring(0, 80) : "No description available" %>...</p>
+
+        <p class="price">From $<%= dest.price %></p>
+
+        <a href="/book/<%= dest.name %>" class="book-btn">Book Now</a>
+      </div>
+    <% }) %>
+
+  </section>
+
+  <%- include("partials/footer") %>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | TravelEase</title>
+  <link rel="stylesheet" href="/css/dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <%- include("partials/nav", { user: user }) %>
+  
+
+  <div class="cont-travel">
+    <p class="txt-1">It's A Big World <br> Out There, Go <br> Explore.</p>
+    <p class="txt-2">Discover new attractions and experiences to match your interests and travel style.</p>
+
+    <button class="book-btn">
+      Book Now <span class="arrow">↓</span>
+    </button>
+
+  </div>
+
+  <section class="dashboard">
+    <div class="welcome">
+      <h1>Welcome, <%= user.username %> 👋</h1>
+      <p>Your travel hub is ready. Plan, book, and manage your adventures.</p>
+    </div>
+
+    <div class="quick-actions">
+      <h2>Quick Actions</h2>
+      <div class="cards">
+        <div class="card" onclick="location.href='/destinations'">
+          <i class="fa-solid fa-plane"></i>
+          <h3>Check destination</h3>
+          <p>Find available flights to amazing destinations.</p>
+        </div>
+
+        <div class="card" onclick="location.href='/book/France'">
+          <i class="fa-solid fa-plane"></i>
+          <h3>Book Flight</h3>
+          <p>Find and book available flights to amazing destinations.</p>
+        </div>
+
+        <div class="card" onclick="location.href='/view-packages'">
+          <i class="fa-solid fa-suitcase-rolling"></i>
+          <h3>View Packages</h3>
+          <p>Explore exclusive travel packages and group tours.</p>
+        </div>
+
+        <div class="card" onclick="location.href='/review'">
+          <i class="fa-solid fa-star"></i>
+          <h3>Write a Review</h3>
+          <p>Share your experience with other travelers.</p>
+        </div>
+
+        <div class="card" onclick="location.href='/my-bookings'">
+          <i class="fa-solid fa-ticket"></i>
+          <h3>My Bookings</h3>
+          <p>View or manage your current and past bookings.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-summary">
+      <h2>My Bookings</h2>
+      <% if (bookings && bookings.length > 0) { %>
+        <% bookings.forEach(b => { %>
+          <div class="booking">
+            <h3><%= b.destination %></h3>
+            <p><strong>Check-in:</strong> <%= new Date(b.check_in).toDateString() %></p>
+            <p><strong>Check-out:</strong> <%= new Date(b.check_out).toDateString() %></p>
+            <p><strong>Guests:</strong> <%= b.guests %></p>
+            <p><strong>Price:</strong> $<%= b.price %></p>
+            <p><strong>Payment:</strong> <%= b.method %></p>
+
+            <form action="/cancel-booking/<%= b.id %>" method="POST" onsubmit="return confirm('Are you sure you want to cancel this booking?');">
+              <button class="cancel-btn" type="submit">Cancel Booking</button>
+            </form>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>You have no active bookings yet.</p>
+      <% } %>
+    </div>
+
+    <div class="payment-section">
+      <h2>Payment Methods</h2>
+      <p>Coming soon: pay easily using Visa, Mastercard, or PayPal.</p>
+      <div class="payment-icons">
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-cc-paypal"></i>
+      </div>
+    </div>
+
+    <div class="logout">
+      <form action="/logout" method="POST">
+        <button class="logout-btn">Logout</button>
+      </form>
+    </div>
+
+
+  </section>
+
+  <%- include("partials/footer") %>
+</body>
+</html>

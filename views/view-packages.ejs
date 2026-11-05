@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Packages</title>
+  <link rel="stylesheet" href="/css/packages.css">
+</head>
+<body>
+
+<h2 class="title">Available Travel Packages</h2>
+
+<div class="packages-container">
+
+  <% packages.forEach(p => { %>
+    <div class="package-card">
+      <img src="<%= p.image %>" alt="<%= p.name %>">
+      <h3><%= p.name %></h3>
+      <p><%= p.description %></p>
+      <p class="price">$<%= p.price %></p>
+
+      <a href="/book/<%= p.name %>" class="book-btn">Book Now</a>
+    </div>
+  <% }) %>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+*{
+    box-sizing: border-box;
+}    
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x:hidden ;
+    background-image: url("/images/airplane2.JPG");
+    /* background-size: cover; */
+    background-position: center;
+    /* background-repeat: no-repeat;
+    height: 100vh; */
+}
+html{
+    width: 100%;
+}
+.login-container{
+    background-color: black;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 30px 40px;
+    top: 50%;
+    left: 50%;
+    place-items: center;
+    width: 100%;
+    max-width: 460px;
+    color: white;
+}
+.form-group{
+    margin-bottom: 20px;
+    margin-right: 100px;
+    text-decoration: none;
+    
+}
+input{
+    padding: 8px 30px;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-login{
+    padding: 3px 17px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+.btn-login:hover{
+    background-color: rgb(32, 32, 235);
+    color: white;
+}
+
+.signup{
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.signup a{
+    text-decoration: none;
+    font-weight: bold;
+}
+.signup a:hover{
+    text-decoration: underline;
+}
+@media(max-width:550px){
+.login-container{
+    width: 100%;
+    max-width: 460px;
+    justify-content: center;
+} 
+.signup{
+    margin-top: 10%;
+    margin-right: 50%;
+}  
+.signup a{
+    text-decoration: none;
+}
+}

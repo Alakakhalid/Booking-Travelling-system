@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="header-container home-header">
+        <div class="overlay"></div>
+        <nav class="nav-container">
+            <img class="logo" src="images/airflight logo.png" alt="logo">
+
+            <ul class="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#destination">Destination</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/destinations">Flight</a></li>
+                <li><a href="/packages">Packages</a></li>
+            </ul>
+
+            <div class="auth-buttons">
+                <a href="/signup"><button class="signup-btn">Sign Up</button></a>
+                <a href="/login"><button class="login-btn">Login</button></a>
+            </div>
+
+            
+            <div class="hambugger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>   
+        
+        
+    <section>
+        <h3 class="body-txt">The Whole World awaits</h3>
+
+
+        <div class="video-container">
+            <video autoplay muted loop playsinline class="background-video" id="landingVideo" width="600px" height="auto">
+            <source src="/videos/travel1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        </div>
+
+        <div class="search-section">
+            <h2 class="body-txt1">Search Destination or Hotels</h2>
+            <input type="text" id="searchInput" placeholder="search a country or 'hotels in the '[country]'" 
+            />
+            <button id="searchBtn">Search</button>
+
+            <div id="results"></div>
+        </div>
+    </section>
+
+    <section id="destination">
+        <h2 class="Popular">🌍 Popular Destinations</h2>
+        <div id="destinations" class="grid"></div>
+
+        <h2 class="Popular">🏨 Top Hotels Picks</h2>
+        <div id="hotels" class="grid"></div>
+
+        <!-- <h2>seasonal Deals</h2>
+        <div id="deals"></div> -->
+    </section>
+
+    <section id="card"></section>
+
+     <section  id="review" class="reviews">
+        <h2>What Our Travelers Say</h2>
+        <div class="testimonials" id="review-cards"></div>
+        <button class="btn-review" onclick="location.href='/review'">See More Reviews</button>
+    </section>
+
+    <section class="pre-footer">
+        <div class="cta-content">
+            <h2>✈ Sign up now to unlock exclusive travel deals!</h2>
+            <p>Join our community of travelers and enjoy members-only discounts on flights and vacation packages.</p>
+            <a href="/signup" class="cta-btn">Get Started</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/about">About</a></li>
+        <li><a href="/review">Reviews</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="/about">About this website</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="footer-bottom">© <%= new Date().getFullYear() %> TravelGo. All rights reserved.</p>
+  </footer>
+
+    </div>
+
+   
+
+
+    
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/review.css">
+    <title>Reviews</title>
+</head>
+<body>
+      <%- include('partials/nav') %> <!-- if you have a nav partial -->
+      <main class="container">
+        <h1>Customer Reviews</h1>
+
+
+        <section id="reviews-list" class="grid">
+            <% reviews.forEach(r => { %>
+                <div class="review-cards">
+                    <div class="rating">
+                        <%= '★'.repeat(r.rating) %><%= '★'.repeat(5 - r.rating) %>
+                    </div>
+                    <p class="text"><%= r.review_text %></p>
+                    <div class="meta">by <strong><%= r.username || 'Anonymous' %></strong> - <small><%= new Date(r.created_at).toLocaleString() %></small></div>
+                </div>
+            <% }) %>
+        </section>
+
+        <section id="submit-review">
+            <h2>Submit your review</h2>
+            <form id="reviewForm">
+                <label>Rating:
+                    <select name="rating" required>
+                        <option value="5">★★★★★</option>
+                        <option value="4">★★★★</option>
+                        <option value="3">★★★</option>
+                        <option value="2">★★</option>
+                        <option value="1">★</option>
+                    </select>
+                </label>
+
+                <label>Revies:
+                    <textarea name="review_text" rows="5" required placeholder="Tell us about your experience..."></textarea>
+                </label>
+                <button type="submit" class="btn">Submit Review</button>
+            </form>
+            <div id="reviewMessage" style="margin-top: 12px;"></div>
+        </section>
+      </main>
+
+      <%- include('partials/footer') %>
+    
+    <script src="/js/reviews.js"></script>
+</body>
+</html>

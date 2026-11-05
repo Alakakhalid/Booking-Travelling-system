@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Create an account</h2>
+        <form action="/signup" method="post">
+            <div class="Name-group">
+            <label for="username"> USERNAME:</label><br>
+            <input name="username" placeholder="Enter YOUR USERNAME" required>
+            </div>
+
+            <div class="signup-group">
+            <label for="Email">Email:</label><br>
+            <input type="email" name="email" placeholder="Enter Email" required>
+            </div>
+
+            <div class="signup-group">
+            <label for="Password">Password:</label><br>
+            <input type="password" name="password" placeholder="Enter password" required>
+            </div>
+
+            <div class="signup-group"> 
+            <label for="comfirmPassword">Comfirm your password</label><br>
+            <input type="password" name="confirmPassword" placeholder="Comfirm Password" required>
+            </div>
+
+            <button class="btn-signup" type="submit">Sign up</button>
+        </form>
+        <script>
+          const signupForm = document.querySelector("form");
+          signupForm.addEventListener("submit", (event) => {
+            const password = signupForm.elements.password.value;
+            const confirmation = signupForm.elements.confirmPassword.value;
+            if (password !== confirmation) {
+              event.preventDefault();
+              alert("Passwords do not match.");
+            }
+          });
+        </script>
+
+        <p>Already have an account? <a href="/login">Login</a></p>
+    </div>
+</body>
+</html>

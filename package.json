@@ -1,0 +1,32 @@
+{
+  "name": "travelling-website",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Khalid",
+  "license": "ISC",
+  "description": "A travel website built with Node.js, Express, and EJS",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
+    "connect-pg-simple": "^10.0.0",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "flutterwave-node-v3": "^1.3.0",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^7.0.10",
+    "pg": "^8.16.3",
+    "sanitize-html": "^2.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

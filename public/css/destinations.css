@@ -1,0 +1,136 @@
+/* General page style */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f9f9f9;
+  color: #222;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 30px 0;
+  color: #333;
+}
+
+/* Search bar section */
+.search-section {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.search-section form {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.search-section input {
+  width: 280px;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.search-section input:focus {
+  border-color: #ffb800;
+}
+
+.search-section button {
+  padding: 12px 20px;
+  border: none;
+  background: #ffb800;
+  color: #111;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-section button:hover {
+  background: #ff9900;
+}
+
+/* Grid layout for destinations */
+.dest-grid {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding-bottom: 60px;
+}
+
+/* Destination card */
+.dest-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.dest-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Card image */
+.dest-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Destination name */
+.dest-card h2 {
+  font-size: 1.4rem;
+  margin: 15px;
+}
+
+/* Description */
+.dest-card p {
+  margin: 0 15px 12px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Price text */
+.price {
+  font-weight: bold;
+  color: #ff9800;
+  margin-bottom: 10px;
+}
+
+/* Book Now Button */
+.book-btn {
+  display: block;
+  width: 90%;
+  margin: 10px auto 18px;
+  text-align: center;
+  background: #ffb800;
+  padding: 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+}
+
+.book-btn:hover {
+  background: #ff9900;
+}
+
+.no-results {
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 20px;
+  font-weight: bold;
+  color: #888;
+}

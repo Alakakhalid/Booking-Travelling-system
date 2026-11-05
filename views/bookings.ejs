@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Bookings</title>
+  <link rel="stylesheet" href="/css/bookings.css">
+</head>
+<body>
+
+<h2 class="title">My Bookings</h2>
+
+<div class="bookings-container">
+
+  <% if (bookings.length === 0) { %>
+      <p class="empty">You have no bookings yet.</p>
+  <% } %>
+
+  <% bookings.forEach(b => { %>
+    <div class="booking-card">
+      <h3><%= b.destination %></h3>
+
+      <p><strong>Check-in:</strong> <%= b.check_in %></p>
+      <p><strong>Check-out:</strong> <%= b.check_out %></p>
+      <p><strong>Guests:</strong> <%= b.guests %></p>
+      <p><strong>Price:</strong> $<%= b.price %></p>
+      <p><strong>Payment Method:</strong> <%= b.method %></p>
+
+      <form action="/cancel-booking/<%= b.id %>" method="POST">
+        <button class="cancel-btn">Cancel Booking</button>
+      </form>
+    </div>
+  <% }) %>
+
+</div>
+
+</body>
+</html>

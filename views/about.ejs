@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= "About" %></title>
+    <link rel="stylesheet" href="/css/about.css">
+</head>
+<body>
+     <nav class="nav-container">
+            <img class="logo" src="images/airflight logo.png" alt="logo">
+
+            <ul class="nav-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#destination">Destination</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/destinations">Flight</a></li>
+                <li><a href="/view-packages">Packages</a></li>
+            </ul>
+
+            <div class="auth-buttons">
+                <a href="/signup"><button class="signup-btn">Sign Up</button></a>
+                <a href="/login"><button class="login-btn">Login</button></a>
+            </div>
+
+            
+            <div class="hambugger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>   
+    
+        <main class="about-page">
+            <!-- hero -->
+                <h1 class="about-txt">Welcome to Khalid SkyWays</h1>
+                <p class="about-subtxt">Redefining travel with smarter bookings, seamless experiences, and global adventures tailored just for you.</p>
+            <header class="about-hero">
+                <div class="about-hero__content">
+                    <h1>Flights, hotels and packages — curated deals and simple booking. Start dreaming, then let's book.</h1>
+                    <p class="lead">At Khalid SkyWays, we make travel simple and inspiring. From carefully selected flights and comfortable hotels to exclusive packages, our goal is to bring you the best deals without the hassle. Whether you’re planning a quick getaway or a dream vacation, we help you start with confidence, book with ease, and enjoy every step of the journey.</p>
+                    <div class="cta-row">
+                        <button class="btn" onclick="location.href="/view-packages"">See packages</button>
+                        <button class="btn-1" onclick="location.href="/destinations"">See flights</button>
+                    </div>
+                </div>
+
+                <div class="about-hero__image">
+                    <img src="images/about-img (2).jpg" alt="people travelling">
+                </div>
+            </header>
+
+            <!-- mission -->
+             <section class="about-mission">
+                <h2>Our Mission</h2>
+                <p>Make travel simple, affordable and delightful. We combine live data and curated picks so you spend less time searching and more time exploring.</p>
+             </section>
+
+             <!-- what we offer -->
+              <section class="about-offers grid three-cols">
+                <div class="offer">
+                    <h3>Flights</h3>
+                    <p>Fast flight search with transparent pricing (login to book).</p>
+                </div>
+
+
+                <div class="offer">
+                    <h3>Hotels</h3>
+                    <p>Top picks and dynamic hotel offers. preview without signing in - book after login.</p>
+                </div>
+
+                <div class="offer">
+                    <h3>Packages</h3>
+                    <p>Handpicked packages for trips and seasons - great for inspiration</p>
+                </div>
+              </section>
+
+              <!-- Team -->
+               <section class="about-team">
+                <h2>Meet the Team</h2>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <img src="/images/team 1.jpg" alt="Team member 1"/>
+                        <h4>Alaka Khalid</h4>
+                        <p>Founder & CEO</p>
+                    </div>
+                     <div class="team-card">
+                        <img src="/images/team 2.jpg" alt="Team member 2"/>
+                        <h4>Alaka Khalid</h4>
+                        <p>Product Lead</p>
+                    </div>
+                    <div class="team-card">
+                        <img src="/images/team 3.jpg" alt="Team member 3"/>
+                        <h4>Chris james</h4>
+                        <p>Head of Paternaships</p>
+                    </div>
+                </div>
+               </section>
+
+               <!-- contact CTA -->
+                <section class="about-cta">
+                    <h3>Ready to start planning?</h3>
+                    <p>Contact us or sign up and start searching for flights and hotels.</p>
+                    <div>
+                        <button class="btn-2" onclick="location.href='/signup'">Create Account</button>
+                        <a class="btn-link" href="mailto:alakakhalid4@gmail.com">support@mytravel.com</a>
+                    </div>
+                </section>
+
+                <footer class="site-footer">
+                    <p>@ <%= new Date().getFullYear() %> AirFlight - All rights reserved.</p>
+                </footer>
+        </main>
+
+        <script src="/js/script.js"></script>
+</body>
+</html>

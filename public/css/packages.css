@@ -1,0 +1,48 @@
+body {
+  background: #fafbfc;
+  font-family: Arial;
+  padding: 35px;
+}
+
+.title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.packages-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.package-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.09);
+  text-align: center;
+}
+
+.package-card img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2a73ff;
+}
+
+.book-btn {
+  display: block;
+  margin-top: 10px;
+  background: #2a73ff;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+}

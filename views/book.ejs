@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Destination | TravelWorld</title>
+  <link rel="stylesheet" href="/css/book.css">
+</head>
+<body>
+  <%- include('partials/nav') %>
+
+  <main class="book-container">
+    <section class="destination-details">
+      <h1><%= destination.name %></h1>
+
+      <div class="image-gallery">
+        <% destination.images.forEach(img => { %>
+          <img src="<%= img %>" alt="<%= destination.name %>">
+        <% }) %>
+      </div>
+
+      <p class="desc"><%= destination.description %></p>
+      <p class="price">💰 <strong>Price:</strong> $<%= destination.price %></p>
+    </section>
+
+    <section class="booking-form">
+      <h2>Complete Your Booking</h2>
+      <form action="/confirm-book" method="POST">
+        <input type="hidden" name="destination" value="<%= destination.name %>">
+        <input type="hidden" name="price" value="<%= destination.price %>">
+
+        <label>Check-In Date</label>
+        <input type="date" name="check_in" required>
+
+        <label>Check-Out Date</label>
+        <input type="date" name="check_out" required>
+
+        <label>Number of Guests</label>
+        <input type="number" name="guests" min="1" max="10" value="1" required>
+
+        <label>Payment Method</label>
+        <select name="method" required>
+          <option value="Credit Card">Credit Card</option>
+          <option value="PayPal">PayPal</option>
+          <option value="Bank Transfer">Bank Transfer</option>
+        </select>
+
+        <button type="submit">Confirm Booking</button>
+      </form>
+    </section>
+  </main>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

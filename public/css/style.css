@@ -1,0 +1,698 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: white;
+}
+html{
+    scroll-behavior: smooth;
+}
+.home-header{
+    background-image: url(/images/airflight1.PNG);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 150vh;
+    width: 100%;
+    color: white;
+    padding-top: 80px;
+}
+.overlay{
+    pointer-events: none;
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1; */
+    display: none;
+}
+.nav-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    align-items: center;
+    z-index: 9999;
+}
+
+.logo{
+    width: 50px;
+    cursor: pointer;
+    
+}
+.nav-list{
+    display: flex;
+    gap: 30px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 200;
+    transition: all 0.4s ease;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+.nav-list li a:hover{
+    text-decoration: underline;
+}
+.auth-buttons{
+    gap: 15px;
+    display: flex;
+    padding: 5px 18px;
+}
+
+.signup-btn, .login-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+.signup-btn:hover, .login-btn:hover{
+    background-color: white;
+    color: black;
+}
+
+.hambugger{
+    display: none;
+    color: black;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 3;
+    /* top: 0; */
+    /* left: 0; */
+    /* padding: 10px 20px; */
+}
+.bar{
+    width: 25px;
+    height: 3px;
+    background-color: black;
+}
+
+
+
+/* search-section */
+.body-txt{
+    color: rgb(252, 244, 244);;
+    max-width: 600px;
+    padding: 60px;
+    font-size: 50px;
+    text-shadow: 0 8px 20px rgba(199, 113, 113, 0.5);
+
+}
+.body-txt1{
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;font-size: 30px;
+}
+.search-section{
+    /* margin: 50px auto; */
+    text-align: center;
+    width: 80%;
+    align-items: center;
+    place-content: center;
+    width: 100%;
+    margin-top: 80px;
+}
+
+#searchInput{
+    padding: 10px;
+    width: 60%;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#searchBtn{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#results{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 1rem;
+}
+
+
+/* video */
+.video-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 26px;
+}
+
+.background-video{
+    width: 800px;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+
+}
+
+
+
+
+/* image-card */
+.image-card{
+    /* width: 100%; */
+    /* max-width: 320px; */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px (0,0,0,0.08);
+    margin: 8px;
+    background: black;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.image-card img{
+    display: block;
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.image-card figcaption{
+    font-size: 0.9rem;
+    color: #555;
+    padding: 0.5rem;
+    flex-grow: 1;
+}
+
+.image-card .btn-book {
+    position: relative;
+    /* bottom: 8px; */
+    /* right: 8px; */
+    background: rgb(50, 50, 61);
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.image-card:hover .btn-book{
+    opacity: 1;
+}
+
+/* hotel-card */
+.hotel-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 360px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8);
+    margin: 8px;
+    cursor: pointer;
+}
+
+.hotel-card__image {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.hotel-card__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hotel-card__content {
+    padding: 12px;
+}
+
+.hotel-card__title {
+    margin:  0 0 6px 0;
+    font-size: 1.05rem;
+}
+
+.hotel-card__address{
+    margin:  0 0 8px 0;
+    color: #666;
+    font-size: 09rem;
+}
+
+.hotel-card__price{
+    margin: 0 0 12px 0;
+    font-weight: 700;
+}
+
+.hotel-card__actions{
+    display: flex;
+    gap: 8px;
+}
+
+.hotel-card__btn{
+    padding: 8px 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #efefef;
+}
+
+
+
+/* fetching permenent data on the index.js */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 20px 0;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px;
+    border: 1px solid black;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    width: 97%;
+}
+.card button {
+  margin-top: auto;
+}
+#destination{
+    color: black;
+    padding: 0px 20px;
+}
+.Popular{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+#destinations{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+.card img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    /* z-index: 999; */
+}
+.card h3 {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+
+.btn{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px 30px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.btn-1{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px 30px;
+    cursor: pointer;
+}
+
+.reviews{
+    padding-left: 20px;
+    color: black;
+}
+.reviews h2{
+    color: black;
+    margin-bottom:10px;
+}
+.btn-review{
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: all 0.4s ease;
+}
+.btn-review:hover{  
+    background-color: skyblue;
+    color: rgb(9, 9, 15);
+}
+
+/* === PRE-FOOTER CTA === */
+.pre-footer {
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.pre-footer .cta-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.pre-footer .cta-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  background-color: white;
+  color: #0077b6;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #023e8a;
+  color: white;
+}
+
+/* === FOOTER === */
+.footer {
+  background-color: #111;
+  color: #ccc;
+  padding: 40px 20px;
+  font-size: 15px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.footer-section {
+  margin: 10px;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #00b4d8;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 20px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #00b4d8;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #222;
+  padding-top: 15px;
+  color: #aaa;
+}
+
+@media(max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* .deal-card {
+  position: relative;
+  text-align: center;
+}
+.deal-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.deal-card h3 {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  color: black;
+  background: rgba(0,0,0,0.5);
+  padding: 5px 10px;
+} */
+
+
+@media(max-width:900px){
+.nav-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    align-items: center;
+}
+.logo{
+    width: 50px;
+    cursor: pointer;
+    
+}
+.nav-list{
+    display: flex;
+    gap: 30px;
+    text-decoration: none;
+    list-style: none;
+}
+.nav-list li a {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    font-weight: 200;
+    transition: all 0.4s ease;
+    margin-top: 5px;
+    padding-top: 5px;
+}
+.nav-list li a:hover{
+    text-decoration: underline;
+}
+.auth-buttons{
+    gap: 15px;
+    display: flex;
+    padding: 3px 18px;
+}
+
+.signup-btn, .login-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 6px 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+.signup-btn:hover, .login-btn:hover{
+    background-color: white;
+    color: black;
+}
+.video-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 26px;
+}
+
+.background-video{
+    width: 600px;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+
+}
+}
+
+@media(max-width:750px){
+    .nav-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        
+    }
+    .nav-list {
+        display: none;
+        width: 80%;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        /* text-align: center; */
+        right: 10px;
+        background-color: blue;
+        padding: 10px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        font-size: 30px;
+        text-align: center;
+        font-family: sans-serif;
+        z-index: 999;
+    }
+    .auth-buttons{
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 280px; /* put it just below the nav-list */
+    right: 10px;
+    background-color: blue;
+    /* padding: 10px; */
+    padding:10px;
+    width: 80%;
+    /* padding: 20px 30px; */
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    z-index: 999;
+    }
+    .signup-btn, .login-btn {
+    /* background-color: rgb(18, 5, 100); */
+    color: white;
+    border: none;
+    /* padding: 3px 10px; */
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    align-items: center;
+    }
+    .nav-list.active{
+        display: flex;
+    }
+    .auth-buttons.active{
+        display: flex;
+    }
+    .hambugger{
+        display: flex;
+        
+    }
+}
+
+@media(max-width:650px){
+    .video-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 26px;
+}
+
+.background-video{
+    width: 500px;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+
+}
+}
+
+@media(max-width:530px){
+    .video-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 26px;
+}
+
+.background-video{
+    width: 400px;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+
+}
+}
+
+@media(max-width:420px){
+    .video-container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 26px;
+}
+
+.background-video{
+    width: 300px;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+
+}
+}
+
+/* media query for popular destination */
+@media(max-width:800px) {
+    #destinations{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }  
+}
+
+@media(max-width:550px) {
+    #destinations{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

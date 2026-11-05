@@ -1,0 +1,35 @@
+body {
+  background: #eef1f5;
+  font-family: Arial;
+  padding: 30px;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.bookings-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 20px;
+}
+
+.booking-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.cancel-btn {
+  background: red;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  color: white;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
